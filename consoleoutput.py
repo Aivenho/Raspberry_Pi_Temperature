@@ -12,8 +12,8 @@ os.system('modprobe w1-therm')
 
 #device
 base_dir = '/sys/bus/w1/devices/'
-# Check your directory name ('28*')!!!
-device_folder = glob.glob(base_dir + '28*')[0]
+# Check your directory name ('10*')!!!
+device_folder = glob.glob(base_dir + '10*')[0]
 device_file = device_folder + '/w1_slave'
 
 # Opens raw device, code changed to reflect issue in Raspian
