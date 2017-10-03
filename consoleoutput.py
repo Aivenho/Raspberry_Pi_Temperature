@@ -12,6 +12,7 @@ os.system('modprobe w1-therm')
 
 #device
 base_dir = '/sys/bus/w1/devices/'
+# Check your directory name ('28*')!!!
 device_folder = glob.glob(base_dir + '28*')[0]
 device_file = device_folder + '/w1_slave'
 
@@ -23,7 +24,7 @@ def read_temp_raw():
     lines = out_decode.split('\n')
     return lines
 
-# Reads temperature, outputs farenhiet
+# Reads temperature, outputs celsius
 def read_temp():
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
@@ -34,6 +35,6 @@ def read_temp():
         temp_string = lines[1][equals_pos+2:]
         temp_c = float(temp_string) / 1000.0
         temp_f = temp_c * 9.0 / 5.0 + 32.0
-        return temp_f
+        return temp_c
 
 print str(calendar.timegm(time.gmtime())) + ',' + str(read_temp())
