@@ -10,7 +10,7 @@ class Reader {
 		string temptab = "      \"temp\" : \"";
 		string datetab = "      \"date\" : \"";
 
-		System.IO.StreamReader file = new System.IO.StreamReader("bedroom.json");
+		System.IO.StreamReader file = new System.IO.StreamReader("batest.json");
 		int ctr = 0;
 		while((line = file.ReadLine()) != null)
 		{
