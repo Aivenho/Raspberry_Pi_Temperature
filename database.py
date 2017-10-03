@@ -51,6 +51,6 @@ data = json.dumps(postdata)
 response = urllib2.urlopen(req,data)
 
 ##uncomment if you want this to repeat:
-#while True:
-#    response = urllib2.urlopen(req,data)
-#    time.sleep(1)
+while True:
+    response = urllib2.urlopen(req,data)
+    time.sleep(5)
