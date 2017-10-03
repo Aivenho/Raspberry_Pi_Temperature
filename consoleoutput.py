@@ -38,3 +38,8 @@ def read_temp():
         return temp_c
 
 print str(calendar.timegm(time.gmtime())) + ',' + str(read_temp())
+
+##uncomment if you want this to repeat:
+while True:
+    response = urllib2.urlopen(req,data)
+    time.sleep(5)
